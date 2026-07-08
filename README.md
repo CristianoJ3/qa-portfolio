@@ -1,2 +1,15 @@
-# qa-portifolio
-Este repositório documenta minha jornada de transição para Quality Assurance (QA), reunindo projetos práticos de testes manuais, testes de API, automação, documentação de bugs e planos de teste desenvolvidos com foco em boas práticas e preparação para o mercado.
+# QA Portfolio
+
+Este repositório reúne projetos práticos de Quality Assurance (QA), desenvolvidos com o objetivo de demonstrar 
+conhecimentos em testes de software e boas práticas da área.
+
+Ao longo deste portfólio serão documentados:
+
+- Testes manuais
+- Casos de teste
+- Relatórios de bugs
+- Testes exploratórios
+- Testes de API
+- Automação de testes
+
+Cada projeto buscará reproduzir situações encontradas no ambiente profissional, priorizando organização, documentação e pensamento crítico.
