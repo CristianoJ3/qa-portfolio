@@ -1,3 +1,12 @@
+Sistema: BugBank
+
+Funcionalidade: Cadastro de usuário
+
+Versão: Atual
+
+Autor: Cristiano Junior
+
+Última atualização: 23/07/2026
 
 CT-001 - Cenário: Cadastrar novo usuário com um e-mail válido.
 
