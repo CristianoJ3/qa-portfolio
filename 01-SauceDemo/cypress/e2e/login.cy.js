@@ -1,37 +1,43 @@
+const standardDomain = 'https://www.saucedemo.com/'
+const standardUser = 'standard_user'
+const standardPassword = 'secret_sauce'
+const loginErrorMessage = 'Epic sadface: Username and password do not match any user in this service'
+
 const selectors = {
   username: '[data-test="username"]',
   password: '[data-test="password"]',
-  loginButton: '[data-test="login-button"]'
+  loginButton: '[data-test="login-button"]',
+  burgerMenuButton: '#react-burger-menu-btn',
+  logoutButton: '[data-test="logout-sidebar-link"]',
+  loginErrorMessage: '[data-test="error"]'
+}
+
+const login = (username, password) => {
+  cy.visit(standardDomain)
+  cy.get(selectors.username).type(username).should('have.value', username)
+  cy.get(selectors.password).type(password).should('have.value', password)
+  cy.get(selectors.loginButton).click()
 }
 
 describe('Login Successful', () => {
   it('passes', () => {
-    cy.visit('https://www.saucedemo.com/')
-    cy.get(selectors.username).type('standard_user').should('have.value', 'standard_user')
-    cy.get(selectors.password).type('secret_sauce').should('have.value', 'secret_sauce')
-    cy.get(selectors.loginButton).click()
+    login(standardUser, standardPassword)
     cy.url().should('include', '/inventory.html')
   })
 })
 
 describe('Logout Successful', () => {
   it('passes', () => {
-    cy.visit('https://www.saucedemo.com/')
-    cy.get(selectors.username).type('standard_user').should('have.value', 'standard_user')
-    cy.get(selectors.password).type('secret_sauce').should('have.value', 'secret_sauce')
-    cy.get(selectors.loginButton).click()
-    cy.get('#react-burger-menu-btn').click()
-    cy.get('[data-test="logout-sidebar-link"]').click()
-    cy.url().should('eq', 'https://www.saucedemo.com/')
+    login(standardUser, standardPassword)
+    cy.get(selectors.burgerMenuButton).click()
+    cy.get(selectors.logoutButton).click()
+    cy.url().should('eq', standardDomain)
   })
 })
 
 describe('Order Completed', () => {
   it('passes', () => {
-    cy.visit('https://www.saucedemo.com/')
-    cy.get(selectors.username).type('standard_user').should('have.value', 'standard_user')
-    cy.get(selectors.password).type('secret_sauce').should('have.value', 'secret_sauce')
-    cy.get(selectors.loginButton).click()
+    login(standardUser, standardPassword)
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
     cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click()
     cy.get('[data-test="shopping-cart-badge"]').click()
@@ -50,21 +56,21 @@ describe('Order Completed', () => {
 
 describe('Login Failure - incorrect user', () =>{
   it('passes', () => {
-    cy.visit('https://www.saucedemo.com/')
-    cy.get(selectors.username).type('abobora').should('not.have.value', 'standard_user')
-    cy.get(selectors.password).type('secret_sauce').should('have.value', 'secret_sauce')
+    cy.visit(standardDomain)
+    cy.get(selectors.username).type('abobora').should('not.have.value', standardUser)
+    cy.get(selectors.password).type(standardPassword).should('have.value', standardPassword)
     cy.get(selectors.loginButton).click()
-    cy.get('[data-test="error"]').should('be.visible').and('contain', 'Epic sadface: Username and password do not match any user in this service')
+    cy.get(selectors.loginErrorMessage).should('be.visible').and('contain', loginErrorMessage)
   })
 })
 
 describe('Login Failure - incorrect password', () =>{
   it('passes', () => {
-    cy.visit('https://www.saucedemo.com/')
-    cy.get(selectors.username).type('standard_user').should('have.value', 'standard_user')
-    cy.get(selectors.password).type('abobora').invoke('val').should('not.equal', 'secret_sauce')
+    cy.visit(standardDomain)
+    cy.get(selectors.username).type(standardUser).should('have.value', standardUser)
+    cy.get(selectors.password).type('abobora').invoke('val').should('not.equal', standardPassword)
     cy.get(selectors.loginButton).click()
-    cy.get('[data-test="error"]').should('be.visible').and('contain', 'Epic sadface: Username and password do not match any user in this service')
+    cy.get(selectors.loginErrorMessage).should('be.visible').and('contain', loginErrorMessage)
   })
 })
 
