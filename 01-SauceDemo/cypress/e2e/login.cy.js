@@ -9,7 +9,10 @@ const selectors = {
   loginButton: '[data-test="login-button"]',
   burgerMenuButton: '#react-burger-menu-btn',
   logoutButton: '[data-test="logout-sidebar-link"]',
-  loginErrorMessage: '[data-test="error"]'
+  loginErrorMessage: '[data-test="error"]',
+  firstNameRegister: '[data-test="firstName"]',
+  lastNameRegister: '[data-test="lastName"]',
+  postalCodeRegister: '[data-test="postalCode"]'
 }
 
 const login = (username, password) => {
@@ -42,9 +45,9 @@ describe('Order Completed', () => {
     cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click()
     cy.get('[data-test="shopping-cart-badge"]').click()
     cy.get('[data-test="checkout"]').click()
-    cy.get('[data-test="firstName"]').type('Dunha')
-    cy.get('[data-test="lastName"]').type('dos Santos')
-    cy.get('[data-test="postalCode"]').type('1234567')
+    cy.get(selectors.firstNameRegister).type('Dunha')
+    cy.get(selectors.lastNameRegister).type('dos Santos')
+    cy.get(selectors.postalCodeRegister).type('1234567')
     cy.get('[data-test="continue"]').click()
     cy.get('[data-test="finish"]').click()
     cy.get('[data-test="complete-header"]').should('have.text', 'Thank you for your order!')
