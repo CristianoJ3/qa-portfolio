@@ -12,7 +12,17 @@ export const selectors = {
   loginErrorMessage: '[data-test="error"]',
   checkoutFirstName: '[data-test="firstName"]',
   checkoutLastName: '[data-test="lastName"]',
-  checkoutPostalCode: '[data-test="postalCode"]'
+  checkoutPostalCode: '[data-test="postalCode"]',
+  addToCartBackpackButton: '[data-test="add-to-cart-sauce-labs-backpack"]',
+  addToCartTShirtButton: '[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]',
+  shoppingCartBadge: '[data-test="shopping-cart-badge"]',
+  checkoutButton: '[data-test="checkout"]',
+  continueButton: '[data-test="continue"]',
+  finishButton: '[data-test="finish"]',
+  completeHeader: '[data-test="complete-header"]',
+  backToProductsButton: '[data-test="back-to-products"]',
+  title: '[data-test="title"]',
+  pdfGenerateButton: '[data-test="generate-pdf-order"]'
 }
 
 export const login = (username, password) => {
