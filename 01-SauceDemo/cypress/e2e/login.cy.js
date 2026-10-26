@@ -8,14 +8,14 @@ import {
 } from './helpers'
 
 describe('Login Successful', () => {
-  it('passes', () => {
+  it('deve realizar o login com credenciais válidas', () => {
     login(standardUser, standardPassword)
     cy.url().should('include', '/inventory.html')
   })
 })
 
 describe('Logout Successful', () => {
-  it('passes', () => {
+  it('deve realizar o logout com sucesso', () => {
     login(standardUser, standardPassword)
     cy.get(selectors.burgerMenuButton).click()
     cy.get(selectors.logoutButton).click()
@@ -24,7 +24,7 @@ describe('Logout Successful', () => {
 })
 
 describe('Order Completed', () => {
-  it('passes', () => {
+  it('deve completar o pedido com sucesso', () => {
     login(standardUser, standardPassword)
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
     cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click()
@@ -43,7 +43,7 @@ describe('Order Completed', () => {
 })
 
 describe('Login Failure - incorrect user', () =>{
-  it('passes', () => {
+  it('deve exibir mensagem de erro ao tentar login com usuário inválido', () => {
     cy.visit(standardDomain)
     cy.get(selectors.username).type('abobora').should('not.have.value', standardUser)
     cy.get(selectors.password).type(standardPassword).should('have.value', standardPassword)
@@ -53,7 +53,7 @@ describe('Login Failure - incorrect user', () =>{
 })
 
 describe('Login Failure - incorrect password', () =>{
-  it('passes', () => {
+  it('deve exibir mensagem de erro ao tentar login com senha inválida', () => {
     cy.visit(standardDomain)
     cy.get(selectors.username).type(standardUser).should('have.value', standardUser)
     cy.get(selectors.password).type('abobora').invoke('val').should('not.equal', standardPassword)
