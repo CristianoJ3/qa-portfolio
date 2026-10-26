@@ -2,6 +2,7 @@ export const standardDomain = 'https://www.saucedemo.com/'
 export const standardUser = 'standard_user'
 export const standardPassword = 'secret_sauce'
 export const loginErrorMessage = 'Epic sadface: Username and password do not match any user in this service'
+export const orderCompleteMessage = 'Thank you for your order!'
 
 export const selectors = {
   username: '[data-test="username"]',
@@ -30,5 +31,16 @@ export const login = (username, password) => {
   cy.get(selectors.username).type(username).should('have.value', username)
   cy.get(selectors.password).type(password).should('have.value', password)
   cy.get(selectors.loginButton).click()
+}
+
+export const completeCheckout = ()  => {
+    cy.get(selectors.shoppingCartBadge).click()
+    cy.get(selectors.checkoutButton).click()
+    cy.get(selectors.checkoutFirstName).type('Dunha')
+    cy.get(selectors.checkoutLastName).type('dos Santos')
+    cy.get(selectors.checkoutPostalCode).type('1234567')
+    cy.get(selectors.continueButton).click()
+    cy.get(selectors.finishButton).click()
+    cy.get(selectors.completeHeader).should('contain', orderCompleteMessage)
 }
 

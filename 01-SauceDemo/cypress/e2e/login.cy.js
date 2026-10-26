@@ -4,7 +4,8 @@ import {
   standardPassword,
   loginErrorMessage,
   selectors,
-  login
+  login,
+  completCheckout
 } from './helpers'
 
 describe('Login bem-sucedido', () => {
@@ -28,14 +29,7 @@ describe('Pedido bem-sucedido', () => {
     login(standardUser, standardPassword)
     cy.get(selectors.addToCartBackpackButton).click()
     cy.get(selectors.addToCartTShirtButton).click()
-    cy.get(selectors.shoppingCartBadge).click()
-    cy.get(selectors.checkoutButton).click()
-    cy.get(selectors.checkoutFirstName).type('Dunha')
-    cy.get(selectors.checkoutLastName).type('dos Santos')
-    cy.get(selectors.checkoutPostalCode).type('1234567')
-    cy.get(selectors.continueButton).click()
-    cy.get(selectors.finishButton).click()
-    cy.get(selectors.completeHeader).should('have.text', 'Thank you for your order!')
+    completeCheckout()
     cy.get(selectors.pdfGenerateButton).click()
     cy.get(selectors.backToProductsButton).click()
     cy.get(selectors.title).should('have.text', 'Products')
