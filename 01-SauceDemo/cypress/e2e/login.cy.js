@@ -5,7 +5,7 @@ import {
   loginErrorMessage,
   selectors,
   login,
-  completCheckout
+  completeCheckout
 } from './helpers'
 
 describe('Login bem-sucedido', () => {
