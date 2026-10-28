@@ -65,7 +65,7 @@ Na interface, selecione o modo E2E e execute o arquivo `sauceDemo.cy.js`.
 Também é possível executar os testes pelo terminal:
 
 ```bash
-npx cypress run --spec "01-SauceDemo/cypress/e2e/saucedemo.cy.js"
+npx cypress run --spec "01-SauceDemo/cypress/e2e/sauceDemo.cy.js"
 ```
 
 ## Objetivo de aprendizagem
