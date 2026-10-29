@@ -6,4 +6,7 @@ node_modules/
 **/cypress/screenshots/
 **/cypress/.cache/
 
+# Relatórios de testes
+01-SauceDemo/results/
+
 .env
