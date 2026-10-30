@@ -30,11 +30,12 @@ Os casos de teste estão documentados no arquivo CT_sauceDemo.md, presente em: .
 01-SauceDemo/
 ├── README.md
 ├── casos-de-teste
-    └── CT_sauceDemo.md
+│   └── CT_sauceDemo.md
 └── cypress/
-    └── e2e/
-        ├── sauceDemo.cy.js
-        └── helpers.js
+│   └── e2e/
+│       ├── sauceDemo.cy.js
+│       └── helpers.js
+└── results/
 ```
 
 ## Como executar os testes
