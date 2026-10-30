@@ -11,6 +11,7 @@ Os cenários foram documentados e automatizados utilizando Cypress e JavaScript,
 - **Cypress:** automação de testes E2E.
 - **JavaScript:** linguagem utilizada na implementação dos testes.
 - **Git e GitHub:** versionamento e publicação do projeto.
+- **JUnit:** geração de relatórios de execução no formato XML.
 
 ## Casos de teste
 
@@ -66,7 +67,7 @@ Na interface, selecione o modo E2E e execute o arquivo `sauceDemo.cy.js`.
 Também é possível executar os testes pelo terminal:
 
 ```bash
-npx cypress run --spec "01-SauceDemo/cypress/e2e/sauceDemo.cy.js"
+npx cypress run
 ```
 
 ## Objetivo de aprendizagem
