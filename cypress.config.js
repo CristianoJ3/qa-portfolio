@@ -11,9 +11,9 @@ module.exports = defineConfig({
   },
 
   e2e: {
-      specPattern: 
-      ["01-SauceDemo/cypress/e2e/**/*.cy.js",
-      "02-BugBank/cypress/e2e/**/*.cy.js"
+      specPattern: [
+       "01-SauceDemo/cypress/e2e/**/*.cy.js",
+       "02-BugBank/cypress/e2e/**/*.cy.js"
       ],
     setupNodeEvents(on, config) {
       // implement node event listeners here
