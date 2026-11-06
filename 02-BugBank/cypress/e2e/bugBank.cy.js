@@ -7,5 +7,6 @@ describe('Cadastrar novo usuário com email válido', () =>{
     cy.get('[name="password"]').last().type('Teste@123')
     cy.get('[name="passwordConfirmation"]').type('Teste@123').should('have.value', 'Teste@123')
     cy.contains('button', 'Cadastrar').click()
+    cy.contains(/A conta \d+-\d+ foi criada com sucesso/).should('be.visible')
     })
 })
