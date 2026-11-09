@@ -50,7 +50,7 @@ describe('CT-004 - Cadastrar novo usuário utilizando um e-mail em formato invá
     cy.get('[name="passwordConfirmation"]').type('Teste@123').should('have.value', 'Teste@123')
     cy.get('#toggleAddBalance').click()
     cy.contains('button', 'Cadastrar').click()
-    cy.contains(/A conta \d+-\d+ foi criada com sucesso/).should('not.exist')
+    cy.contains('Formato inválido').should('be.visible')
   })
 })
 
