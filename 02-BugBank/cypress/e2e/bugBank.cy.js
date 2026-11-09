@@ -39,3 +39,30 @@ describe('Cadastrar novo usuário utilizando senha diferente na confirmação de
     cy.contains('As senhas não são iguais.').should('be.visible')
   })
 })
+
+describe('Cadastrar novo usuário utilizando um e-mail em formato inválido', () =>{
+  it('não deve permitir o cadastro com email em formato inválido', () => {
+    cy.visit("https://bugbank.netlify.app/")
+    cy.contains('button', 'Registrar').click()
+    cy.get('[name="email"]').last().type('test@example')
+    cy.get('[name="name"]').type('Maria')
+    cy.get('[name="password"]').last().type('Teste@123')
+    cy.get('[name="passwordConfirmation"]').type('Teste@123').should('have.value', 'Teste@123')
+    cy.get('#toggleAddBalance').click()
+    cy.contains('button', 'Cadastrar').click()
+    cy.contains('O email informado é inválido.').should('be.visible')
+  })
+})
+
+describe('Cadastrar novo usuário com campo nome vazio', () =>{
+  it('não deve permitir o cadastro com nome vazio', () => {
+    cy.visit("https://bugbank.netlify.app/")
+    cy.contains('button', 'Registrar').click()
+    cy.get('[name="email"]').last().type('test@example.com')
+    cy.get('[name="password"]').last().type('Teste@123')
+    cy.get('[name="passwordConfirmation"]').type('Teste@123').should('have.value', 'Teste@123')
+    cy.get('#toggleAddBalance').click()
+    cy.contains('button', 'Cadastrar').click()
+    cy.contains('Nome não pode ser vazio.').should('be.visible')
+    })
+})
