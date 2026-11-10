@@ -7,6 +7,7 @@ module.exports = defineConfig({
   reporter: 'junit',
   reporterOptions: {
     mochaFile: '01-SauceDemo/results/resultado-testes-[hash].xml',
+    mochaFile: '02-BugBank/results/resultado-testes-[hash].xml',
     toConsole: true
   },
 

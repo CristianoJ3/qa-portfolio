@@ -8,5 +8,6 @@ node_modules/
 
 # Relatórios de testes
 01-SauceDemo/results/
+02-BugBank/results/
 
 .env
