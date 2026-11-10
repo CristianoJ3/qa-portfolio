@@ -1,5 +1,6 @@
 export const standardDomain = 'https://bugbank.netlify.app/'
 export const standardPassword = 'Teste@123'
+export const alternativePassword = 'Abobora@234'
 export const successfulRegistrationMessage = /A conta \d+-\d+ foi criada com sucesso/
 export const invalidEmailFormatMessage = 'Formato inválido'
 export const passwordMismatchMessage = 'As senhas não são iguais.'

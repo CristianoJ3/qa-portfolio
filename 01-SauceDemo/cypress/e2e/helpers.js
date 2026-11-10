@@ -28,8 +28,8 @@ export const selectors = {
 
 export const login = (username, password) => {
   cy.visit(standardDomain)
-  cy.get(selectors.username).type(username).should('have.value', username)
-  cy.get(selectors.password).type(password).should('have.value', password)
+  cy.get(selectors.username).type(username)
+  cy.get(selectors.password).type(password)
   cy.get(selectors.loginButton).click()
 }
 

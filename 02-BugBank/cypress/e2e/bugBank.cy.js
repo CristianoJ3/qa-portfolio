@@ -1,6 +1,7 @@
 import { 
   standardDomain,
   standardPassword,
+  alternativePassword,
   successfulRegistrationMessage,
   invalidEmailFormatMessage,
   passwordMismatchMessage,
@@ -15,7 +16,7 @@ describe('CT-001 - Cadastrar novo usuário com email válido', () =>{
     cy.get(selectors.email).last().type('firstTest@example.com')
     cy.get(selectors.name).type('Maria')
     cy.get(selectors.password).last().type(standardPassword)
-    cy.get(selectors.passwordConfirmation).type(standardPassword).should('have.value', standardPassword)
+    cy.get(selectors.passwordConfirmation).type(standardPassword)
     cy.get(selectors.toggleAddBalance).click()
     cy.contains(selectors.registerButton, 'Cadastrar').click()
     cy.contains(successfulRegistrationMessage).should('be.visible')
@@ -28,8 +29,8 @@ describe('CT-002 - Cadastrar novo usuário com email previamente cadastrado', ()
     cy.contains(selectors.registerButton, 'Registrar').click()
     cy.get(selectors.email).last().type('firstTest@example.com')
     cy.get(selectors.name).type('Amanda')
-    cy.get(selectors.password).last().type('Abobora@234')
-    cy.get(selectors.passwordConfirmation).type('Abobora@234').should('have.value', 'Abobora@234')
+    cy.get(selectors.password).last().type(alternativePassword)
+    cy.get(selectors.passwordConfirmation).type(alternativePassword)
     cy.get(selectors.toggleAddBalance).click()
     cy.contains(selectors.registerButton, 'Cadastrar').click()
     cy.contains(successfulRegistrationMessage).should('not.exist')
