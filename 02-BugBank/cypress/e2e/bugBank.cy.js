@@ -64,7 +64,7 @@ describe('CT-004 - Cadastrar novo usuário utilizando um e-mail em formato invá
   })
 })
 
-describe('CT-005 -Cadastrar novo usuário com campo nome vazio', () =>{
+describe('CT-005 - Cadastrar novo usuário com campo nome vazio', () =>{
   it('não deve permitir o cadastro com nome vazio', () => {
     cy.visit(standardDomain)
     cy.contains(selectors.registerButton, 'Registrar').click()

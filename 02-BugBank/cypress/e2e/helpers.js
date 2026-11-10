@@ -11,7 +11,5 @@ export const selectors = {
     password: '[name="password"]',
     passwordConfirmation: '[name="passwordConfirmation"]',
     toggleAddBalance: '#toggleAddBalance',
-    registerButton: 'button[type="submit"]',
-    registrationSuccessMessage: '.Toastify__toast-body',
     registerButton: 'button'
 }
