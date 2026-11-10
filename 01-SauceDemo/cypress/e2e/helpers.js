@@ -41,6 +41,6 @@ export const completeCheckout = ()  => {
     cy.get(selectors.checkoutPostalCode).type('1234567')
     cy.get(selectors.continueButton).click()
     cy.get(selectors.finishButton).click()
-    cy.get(selectors.completeHeader).should('contain', orderCompleteMessage)
+    cy.contains(orderCompleteMessage).should('be.visible')
 }
 
