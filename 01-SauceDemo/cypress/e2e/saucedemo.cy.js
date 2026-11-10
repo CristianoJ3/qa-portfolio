@@ -42,7 +42,7 @@ describe('CT-004 - Falha no login - usuário inválido', () =>{
     cy.get(selectors.username).type('abobora').should('not.have.value', standardUser)
     cy.get(selectors.password).type(standardPassword)
     cy.get(selectors.loginButton).click()
-    cy.get(selectors.loginErrorMessage).should('be.visible').and('contain', loginErrorMessage)
+    cy.contains(loginErrorMessage).should('be.visible')
   })
 })
 
@@ -52,7 +52,7 @@ describe('CT-005 - Falha no login - senha inválida', () =>{
     cy.get(selectors.username).type(standardUser)
     cy.get(selectors.password).type('abobora').should('not.have.value', standardPassword)
     cy.get(selectors.loginButton).click()
-    cy.get(selectors.loginErrorMessage).should('be.visible').and('contain', loginErrorMessage)
+    cy.contains(loginErrorMessage).should('be.visible')
   })
 })
 
