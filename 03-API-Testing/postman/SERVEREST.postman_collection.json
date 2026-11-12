@@ -83,6 +83,17 @@
         },
         {
           "name": "Login usuário",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const response = pm.response.json();\r\n\r\nconst token = response.authorization.replace(\"Bearer \", \"\");\r\n\r\npm.environment.set(\"token\", token);"
+                ]
+              }
+            }
+          ],
           "request": {
             "method": "POST",
             "header": [],
@@ -114,13 +125,24 @@
       "item": [
         {
           "name": "Cadastrar produto",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const response = pm.response.json();\r\n\r\npm.environment.set(\"produtoId\", response._id);"
+                ]
+              }
+            }
+          ],
           "request": {
             "auth": {
               "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0oj6}}",
+                  "value": "{{token}}",
                   "type": "string"
                 }
               ]
@@ -154,7 +176,13 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": ""
+              "raw": "{{BASE_URL}}/produtos",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "produtos"
+              ]
             }
           },
           "response": []
@@ -165,7 +193,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": ""
+              "raw": "{{BASE_URL}}/produtos/{{produtoId}}",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "produtos",
+                "{{produtoId}}"
+              ]
             }
           },
           "response": []
@@ -178,30 +213,21 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0hqr}}",
+                  "value": "{{token}}",
                   "type": "string"
                 }
               ]
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
             "url": {
-              "raw": "{{BASE_URL}}/produtos/jQwLNHQVotsN1dJa",
+              "raw": "{{BASE_URL}}/produtos/{{produtoId}}",
               "host": [
                 "{{BASE_URL}}"
               ],
               "path": [
                 "produtos",
-                "jQwLNHQVotsN1dJa"
+                "{{produtoId}}"
               ]
             }
           },
@@ -215,7 +241,7 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0wwv}}",
+                  "value": "{{token}}",
                   "type": "string"
                 }
               ]
@@ -232,13 +258,13 @@
               }
             },
             "url": {
-              "raw": "{{BASE_URL}}/produtos/vgdFF0thES5BoAnC",
+              "raw": "{{BASE_URL}}/produtos/{{produtoId}}",
               "host": [
                 "{{BASE_URL}}"
               ],
               "path": [
                 "produtos",
-                "vgdFF0thES5BoAnC"
+                "{{produtoId}}"
               ]
             }
           },
