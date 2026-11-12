@@ -206,6 +206,43 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "Alterar produto",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0wwv}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Notebook IDEAPAD 330\",\r\n  \"preco\": 2950,\r\n  \"descricao\": \"Notebook i5, 8GB RAM, SSD 256GB\",\r\n  \"quantidade\": 179\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/produtos/vgdFF0thES5BoAnC",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "produtos",
+                "vgdFF0thES5BoAnC"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     }
@@ -217,6 +254,10 @@
     },
     {
       "key": "json_web_token_0hqr",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0wwv",
       "secret": true
     }
   ]
