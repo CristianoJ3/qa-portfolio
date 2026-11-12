@@ -1,0 +1,82 @@
+{
+  "info": {
+    "_postman_id": "f91efba9-e977-4956-a1d9-9ccfc016b2b9",
+    "name": "SERVEREST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37955828"
+  },
+  "item": [
+    {
+      "name": "Criar usuário",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Cristiano Junior\",\r\n  \"email\": \"cristiano.junior@qa.com.br\",\r\n  \"password\": \"teste\",\r\n  \"administrador\": \"true\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/usuarios",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar usuários",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/usuarios",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar usuário",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/usuarios/EXEj73DML6uWGJME",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "usuarios",
+            "EXEj73DML6uWGJME"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
