@@ -7,102 +7,217 @@
   },
   "item": [
     {
-      "name": "Criar usuário",
-      "event": [
+      "name": "Usuário",
+      "item": [
         {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"nome\": \"Cristiano Junior\",\r\n  \"email\": \"cristiano.junior@qa.com.br\",\r\n  \"password\": \"teste\",\r\n  \"administrador\": \"true\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
+          "name": "Criar usuário",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
             }
-          }
-        },
-        "url": {
-          "raw": "{{BASE_URL}}/usuarios",
-          "host": [
-            "{{BASE_URL}}"
           ],
-          "path": [
-            "usuarios"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Listar usuários",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{BASE_URL}}/usuarios",
-          "host": [
-            "{{BASE_URL}}"
-          ],
-          "path": [
-            "usuarios"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Deletar usuário",
-      "request": {
-        "method": "DELETE",
-        "header": [],
-        "url": {
-          "raw": "{{BASE_URL}}/usuarios/EXEj73DML6uWGJME",
-          "host": [
-            "{{BASE_URL}}"
-          ],
-          "path": [
-            "usuarios",
-            "EXEj73DML6uWGJME"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Realizar login",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"email\": \"cristiano.junior@qa.com.br\",\r\n  \"password\": \"teste\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Cristiano Junior\",\r\n  \"email\": \"cristiano.junior@qa.com.br\",\r\n  \"password\": \"teste\",\r\n  \"administrador\": \"true\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/usuarios",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
             }
-          }
+          },
+          "response": []
         },
-        "url": {
-          "raw": "{{BASE_URL}}/login",
-          "host": [
-            "{{BASE_URL}}"
-          ],
-          "path": [
-            "login"
-          ]
+        {
+          "name": "Listar usuários",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/usuarios",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar usuário",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/usuarios/EXEj73DML6uWGJME",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "usuarios",
+                "EXEj73DML6uWGJME"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login usuário",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"cristiano.junior@qa.com.br\",\r\n  \"password\": \"teste\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/login",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
         }
-      },
-      "response": []
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Cadastrar produto",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0oj6}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Notebook IDEAPAD 330\",\r\n  \"preco\": 2700,\r\n  \"descricao\": \"Notebook i5, 8GB RAM, SSD 256GB\",\r\n  \"quantidade\": 381\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/produtos",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar produto por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar produto por ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_0hqr}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/produtos/jQwLNHQVotsN1dJa",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "produtos",
+                "jQwLNHQVotsN1dJa"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0oj6",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0hqr",
+      "secret": true
     }
   ]
 }
