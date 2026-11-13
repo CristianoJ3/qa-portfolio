@@ -96,9 +96,10 @@ Dessa forma, as requisições podem reutilizar o token de autenticação e o ide
 3. Execute as requisições de cadastro, consulta e exclusão conforme necessário.
 4. Verifique as respostas HTTP e os dados retornados pela API.
 
-## API utilizada
+## APIs utilizadas:
 
 [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
+
 [Severest](https://serverest.dev)
 
 Serviço público utilizado para simular operações comuns em APIs REST e permitir a prática de testes.
