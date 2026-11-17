@@ -17,7 +17,7 @@
 ### Pré-Requisito: 
 - O e-mail informado não deve estar previamente cadastrado no sistema. 
 ### Passos:
-1 - Clicar no botão Registrar para acessar o formulário de cadastro;
+1 - Clicar no botão Registrar para acessar o formulário de cadastro;  
 2 - Informar um e-mail válido;  
 3 - Informar um nome válido;  
 4 - Informar uma senha válida;  
@@ -32,7 +32,7 @@
 ### Pré-Requisito: 
 - Deve existir uma conta previamente cadastrada utilizando o e-mail informado. 
 ### Passos:
-1 - Clicar no botão Registrar para acessar o formulário de cadastro;
+1 - Clicar no botão Registrar para acessar o formulário de cadastro;  
 2 - Informar um e-mail já existente;  
 3 - Informar um nome válido;  
 4 - Informar uma senha válida;  
@@ -47,7 +47,7 @@
 ### Pré-Requisito: 
 - O e-mail informado não deve estar previamente cadastrado no sistema. 
 ### Passos:
-1 - Clicar no botão Registrar para acessar o formulário de cadastro;
+1 - Clicar no botão Registrar para acessar o formulário de cadastro;  
 2 - Informar um e-mail válido;  
 3 - Informar um nome válido;  
 4 - Informar uma senha válida;  
@@ -62,7 +62,7 @@
 ### Pré-Requisito: 
 - Não há pré-requisitos. 
 ### Passos:
-1 - Clicar no botão Registrar para acessar o formulário de cadastro;
+1 - Clicar no botão Registrar para acessar o formulário de cadastro;  
 2 - Informar um e-mail com formato inválido;  
 3 - Informar um nome válido;  
 4 - Informar uma senha válida;  
@@ -77,7 +77,7 @@
 ### Pré-Requisito: 
 - Preencher os campos ‘E-mail’, ‘Senha’ e ‘Confirmação senha’ corretamente. 
 ### Passos:
-1 - Clicar no botão Registrar para acessar o formulário de cadastro;
+1 - Clicar no botão Registrar para acessar o formulário de cadastro;  
 2 - Informar um e-mail válido;  
 3 - Deixar o campo ‘Nome’ em branco;  
 4 - Informar uma senha válida;  
