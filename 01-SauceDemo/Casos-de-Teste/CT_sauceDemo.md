@@ -17,8 +17,8 @@
 ### Pré-Requisito: 
 - Estar na página de login. 
 ### Passos:
-1 - Informar um usuário válido;
-2 - Informar uma senha válida;
+1 - Informar um usuário válido;  
+2 - Informar uma senha válida;  
 3 - Clicar em "Login".
 ### Resultado esperado:
 - Realizar o login com sucesso e acessar a página de produtos.
@@ -28,7 +28,7 @@
 ### Pré-Requisito: 
 - Estar autenticado no sistema e na página de produtos. 
 ### Passos:
-1 - Abrir o menu de navegação;
+1 - Abrir o menu de navegação;  
 2 - Clicar em "Logout".
 ### Resultado esperado:
 - Realizar o logout com sucesso e retornar para a página de login.
@@ -38,12 +38,12 @@
 ### Pré-Requisito: 
 - Estar autenticado no sistema e na página de produtos. 
 ### Passos:
-1 - Adicionar um ou mais produtos ao carrinho;
-2 - Acessar o carrinho;
-3 - Preencher os campos: nome, sobrenome, código postal;
-4 - Prosseguir para a página com os dados gerais do pedido;
-5 - Finalizar a compra;
-6 - Gerar o pdf do pedido completo (opcional);
+1 - Adicionar um ou mais produtos ao carrinho;  
+2 - Acessar o carrinho;  
+3 - Preencher os campos: nome, sobrenome, código postal;  
+4 - Prosseguir para a página com os dados gerais do pedido;  
+5 - Finalizar a compra;  
+6 - Gerar o pdf do pedido completo (opcional);  
 7 - Retornar para a página de produtos.
 ### Resultado esperado:
 - O sistema deve concluir o pedido e exibir a mensagem de confirmação da compra.
@@ -53,8 +53,8 @@
 ### Pré-Requisito: 
 - O usuário informado não deve estar cadastrado no sistema. 
 ### Passos:
-1 - Informar um nome de usuário inválido;
-2 - Informar uma senha válida;
+1 - Informar um nome de usuário inválido;  
+2 - Informar uma senha válida;  
 3 - Clicar em "Login".
 ### Resultado esperado:
 - Exibir uma mensagem de erro informando que o usuário e a senha não correspondem a uma conta válida.
@@ -64,8 +64,8 @@
 ### Pré-Requisito: 
 - O usuário informado deve estar cadastrado no sistema. 
 ### Passos:
-1 - Informar um nome de usuário válido;
-2 - Informar uma senha inválida;
+1 - Informar um nome de usuário válido;  
+2 - Informar uma senha inválida;  
 3 - Clicar em "Login".
 ### Resultado esperado:
 - Exibir uma mensagem de erro informando que o usuário e a senha não correspondem a uma conta válida.
