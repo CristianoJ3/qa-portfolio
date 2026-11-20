@@ -75,3 +75,7 @@ npx cypress run
 Este projeto faz parte do meu portfólio de QA e tem como objetivo desenvolver habilidades em documentação de casos de teste, validação de comportamentos, identificação de falhas e automação de testes E2E.
 
 O projeto será evoluído gradualmente, conforme novos cenários e validações forem implementados.
+
+## Autor
+
+Cristiano Junior
