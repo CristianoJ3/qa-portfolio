@@ -15,7 +15,7 @@ Os cenários contemplam testes positivos e negativos, abordando validações com
 
 ## Casos de teste
 
-Os casos de teste estão documentados no arquivo CT_sauceDemo.md, presente em: ./casos-de-teste/
+Os casos de teste estão documentados no arquivo CT_Cadastro_Usuario.md, presente em: ./casos-de-teste/
 
 | ID | Cenário |
 |---|---|
