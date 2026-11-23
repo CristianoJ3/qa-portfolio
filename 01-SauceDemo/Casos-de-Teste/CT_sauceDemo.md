@@ -77,8 +77,8 @@
 
 ### Passos:
 1 - Selecionar o botão "Add to cart" dos seis produtos disponíveis na página de produtos;  
-2 - Verificar o indicador do carrinho;
-3 - Acessar o carrinho;
+2 - Verificar o indicador do carrinho;  
+3 - Acessar o carrinho;  
 4 - Verificar se os seis produtos estão listados dentro do carrinho.
 
 ### Resultado esperado:
