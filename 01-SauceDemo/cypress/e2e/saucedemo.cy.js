@@ -56,3 +56,18 @@ describe('CT-005 - Falha no login - senha inválida', () =>{
   })
 })
 
+describe('CT-006 - Adicionar produtos ao carrinho', () => {
+  it('deve adicionar produtos ao carrinho com sucesso', () => {
+    login(standardUser, standardPassword)
+    cy.get(selectors.addToCartBackpackButton).click()
+    cy.get(selectors.addToCartBikeLightButton).click()
+    cy.get(selectors.addToCartFleeceJacketButton).click()
+    cy.get(selectors.addToCartTShirtButton).click()
+    cy.get(selectors.addToCartOnesieButton).click()
+    cy.get(selectors.addToCartAllTheThingsButton).click()
+    cy.get(selectors.shoppingCartBadge).should('have.text', '6')
+    cy.get(selectors.shoppingCartBadge).click()
+    cy.get(selectors.cartItemName).should('have.length', 6)
+  })
+})
+
