@@ -76,11 +76,26 @@
 - O usuário deve estar autenticado no sistema.
 
 ### Passos:
-1 - Selecionar o botão "Add to cart" dos seis produtos disponíveis na página de produtos;  
+1 - Adicionar os seis produtos ao carrinho;  
 2 - Verificar o indicador do carrinho;  
 3 - Acessar o carrinho;  
 4 - Verificar se os seis produtos estão listados dentro do carrinho.
 
 ### Resultado esperado:
-- O indicador do carrinho deve exibir a quantidade '6', indicando que os seis produtos foram adicionados com sucesso.
-- Os seis produtos adicionados devem estar listados corretamente dentro do carrinho.
+- O indicador do carrinho deve exibir a quantidade '6', indicando que os seis produtos foram adicionados com sucesso e os seis produtos adicionados devem estar listados corretamente dentro do carrinho.
+
+## **CT-007** - Cenário: Remover produtos do carrinho.
+
+### Pré-Requisito:
+- O usuário deve estar autenticado no sistema.
+- Os seis produtos devem estar disponíveis na página de produtos.
+
+### Passos:
+1 - Adicionar os seis produtos ao carrinho;  
+2 - Acessar o carrinho;  
+3 - Remover individualmente os seis produtos;  
+4 - Verificar se não existem produtos listados no carrinho;  
+5 - Verificar o indicador do carrinho.
+
+### Resultado esperado:
+- Todos os produtos devem ser removidos com sucesso e o indicador do carrinho não deve ser exibido.
