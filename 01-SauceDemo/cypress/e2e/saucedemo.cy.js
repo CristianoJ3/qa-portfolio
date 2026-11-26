@@ -64,7 +64,7 @@ describe('CT-006 - Adicionar produtos ao carrinho', () => {
     addAllProductsToCart()
     cy.get(selectors.shoppingCartBadge).should('have.text', '6')
     cy.get(selectors.shoppingCartBadge).click()
-    cy.get(selectors.cartItemName).should('have.length', 6)
+    cy.get(selectors.inventoryItemName).should('have.length', 6)
   })
 })
 
@@ -84,7 +84,7 @@ describe('CT-008 - Ordenar produtos de A-Z e Z-A', () => {
     login(standardUser, standardPassword)
     cy.get(selectors.sortContainerButton).select('az')
     
-    cy.get(selectors.cartItemName).then(($items) => {
+    cy.get(selectors.inventoryItemName).then(($items) => {
       const names = [...$items].map((item) => item.innerText)
       const sortedNames = [...names].sort()
 
@@ -93,7 +93,7 @@ describe('CT-008 - Ordenar produtos de A-Z e Z-A', () => {
 
     cy.get(selectors.sortContainerButton).select('za')
     
-    cy.get(selectors.cartItemName).then(($items) => {
+    cy.get(selectors.inventoryItemName).then(($items) => {
       const names = [...$items].map((item) => item.innerText)
       const sortedNames = [...names].sort().reverse()
 

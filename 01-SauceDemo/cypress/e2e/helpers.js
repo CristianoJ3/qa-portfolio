@@ -27,7 +27,7 @@ export const selectors = {
   removeFromCartOnesieButton: '[data-test="remove-sauce-labs-onesie"]',
   removeFromCartAllTheThingsButton: '[data-test="remove-test.allthethings()-t-shirt-(red)"]',
   shoppingCartBadge: '[data-test="shopping-cart-badge"]',
-  cartItemName: '.inventory_item_name',
+  inventoryItemName: '.inventory_item_name',
   checkoutButton: '[data-test="checkout"]',
   continueButton: '[data-test="continue"]',
   finishButton: '[data-test="finish"]',
