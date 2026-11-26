@@ -26,6 +26,7 @@ Os casos de teste estão documentados no arquivo CT_sauceDemo.md, presente em: .
 | CT-005 | Realizar login com senha inválida |
 | CT-006 | Adicionar produtos ao carrinho |
 | CT-007 | Remover produtos do carrinho |
+| CT-008 | Ordenar produtos de A-Z e Z-A |
 
 ## Estrutura do projeto
 
