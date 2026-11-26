@@ -100,3 +100,19 @@
 ### Resultado esperado:
 - Todos os produtos devem ser removidos com sucesso;  
 - O indicador do carrinho não deve ser exibido.
+
+## **CT-008** - Cenário: Ordenar produtos de A-Z e Z-A.
+
+### Pré-Requisito:
+- O usuário deve estar autenticado no sistema.
+- Os seis produtos devem estar disponíveis na página de produtos.
+
+### Passos:
+1 - Na página de produtos, selecionar a opção de ordenação de A-Z;  
+2 - Verificar se os produtos estão organizados em ordem alfabética crescente (A-Z);  
+3 - Selecionar a opção de ordenação de Z-A;  
+4 - Verificar se os produtos estão organizados em ordem alfabética decrescente (Z-A).
+
+### Resultado esperado:
+- Todos os produtos devem ser exibidos em ordem alfabética crescente (A-Z);  
+- Todos os produtos devem ser exibidos em ordem alfabética decrescente (Z-A).
