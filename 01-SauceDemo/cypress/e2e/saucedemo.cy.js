@@ -77,7 +77,7 @@ describe('CT-007 - Remover produtos do carrinho', () => {
     cy.get(selectors.shoppingCartBadge).click()
     removeAllProductsFromCart()
     cy.get(selectors.shoppingCartBadge).should('not.exist')
-    cy.get(selectors.shoppingCartBadge).should('not.exist')
+    cy.get(selectors.inventoryItemName).should('not.exist')
   })
 })
 

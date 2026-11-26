@@ -35,7 +35,7 @@ export const selectors = {
   backToProductsButton: '[data-test="back-to-products"]',
   title: '[data-test="title"]',
   pdfGenerateButton: '[data-test="generate-pdf-order"]',
-  sortContainerButton: '[data-test="product-sort-container"]'
+  productSortSelector: '[data-test="product-sort-container"]'
 }
 
 export const login = (username, password) => {
@@ -75,7 +75,7 @@ export const removeAllProductsFromCart = () => {
 }
 
 export const orderProductsByNameAZ = () => {
-      cy.get(selectors.sortContainerButton).select('az')
+      cy.get(selectors.productSortSelector).select('az')
     
     cy.get(selectors.inventoryItemName).then(($items) => {
       const names = [...$items].map((item) => item.innerText)
@@ -86,7 +86,7 @@ export const orderProductsByNameAZ = () => {
   }
 
 export const orderProductsByNameZA = () => {
-      cy.get(selectors.sortContainerButton).select('za')
+      cy.get(selectors.productSortSelector).select('za')
     
     cy.get(selectors.inventoryItemName).then(($items) => {
       const names = [...$items].map((item) => item.innerText)
