@@ -98,4 +98,5 @@
 5 - Verificar o indicador do carrinho.
 
 ### Resultado esperado:
-- Todos os produtos devem ser removidos com sucesso e o indicador do carrinho não deve ser exibido.
+- Todos os produtos devem ser removidos com sucesso;  
+- O indicador do carrinho não deve ser exibido.
