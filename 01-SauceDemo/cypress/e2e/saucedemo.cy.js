@@ -78,3 +78,26 @@ describe('CT-007 - Remover produtos do carrinho', () => {
     cy.get(selectors.shoppingCartBadge).should('not.exist')
   })
 })
+
+describe('CT-008 - Ordenar produtos de A-Z e Z-A', () => {
+  it('deve ordenar os produtos de A-Z e Z-A com sucesso', () => {
+    login(standardUser, standardPassword)
+    cy.get(selectors.sortContainerButton).select('az')
+    
+    cy.get(selectors.cartItemName).then(($items) => {
+      const names = [...$items].map((item) => item.innerText)
+      const sortedNames = [...names].sort()
+
+      expect(names).to.deep.equal(sortedNames)
+    })
+
+    cy.get(selectors.sortContainerButton).select('za')
+    
+    cy.get(selectors.cartItemName).then(($items) => {
+      const names = [...$items].map((item) => item.innerText)
+      const sortedNames = [...names].sort().reverse()
+
+      expect(names).to.deep.equal(sortedNames)
+    })
+  })
+})
