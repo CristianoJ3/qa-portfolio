@@ -34,7 +34,8 @@ export const selectors = {
   completeHeader: '[data-test="complete-header"]',
   backToProductsButton: '[data-test="back-to-products"]',
   title: '[data-test="title"]',
-  pdfGenerateButton: '[data-test="generate-pdf-order"]'
+  pdfGenerateButton: '[data-test="generate-pdf-order"]',
+  sortContainerButton: '[data-test="product-sort-container"]'
 }
 
 export const login = (username, password) => {
@@ -55,3 +56,20 @@ export const completeCheckout = ()  => {
     cy.contains(orderCompleteMessage).should('be.visible')
 }
 
+export const addAllProductsToCart = () => {
+      cy.get(selectors.addToCartBackpackButton).click()
+    cy.get(selectors.addToCartBikeLightButton).click()
+    cy.get(selectors.addToCartFleeceJacketButton).click()
+    cy.get(selectors.addToCartTShirtButton).click()
+    cy.get(selectors.addToCartOnesieButton).click()
+    cy.get(selectors.addToCartAllTheThingsButton).click()
+}
+
+export const removeAllProductsFromCart = () => {
+    cy.get(selectors.removeFromCartBackpackButton).click()
+    cy.get(selectors.removeFromCartBikeLightButton).click()
+    cy.get(selectors.removeFromCartFleeceJacketButton).click()
+    cy.get(selectors.removeFromCartTShirtButton).click()
+    cy.get(selectors.removeFromCartOnesieButton).click()
+    cy.get(selectors.removeFromCartAllTheThingsButton).click()
+}

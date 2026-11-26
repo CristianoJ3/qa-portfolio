@@ -5,7 +5,9 @@ import {
   loginErrorMessage,
   selectors,
   login,
-  completeCheckout
+  completeCheckout,
+  addAllProductsToCart,
+  removeAllProductsFromCart
 } from './helpers'
 
 describe('CT-001 - Login bem-sucedido', () => {
@@ -59,12 +61,7 @@ describe('CT-005 - Falha no login - senha inválida', () =>{
 describe('CT-006 - Adicionar produtos ao carrinho', () => {
   it('deve adicionar produtos ao carrinho com sucesso', () => {
     login(standardUser, standardPassword)
-    cy.get(selectors.addToCartBackpackButton).click()
-    cy.get(selectors.addToCartBikeLightButton).click()
-    cy.get(selectors.addToCartFleeceJacketButton).click()
-    cy.get(selectors.addToCartTShirtButton).click()
-    cy.get(selectors.addToCartOnesieButton).click()
-    cy.get(selectors.addToCartAllTheThingsButton).click()
+    addAllProductsToCart()
     cy.get(selectors.shoppingCartBadge).should('have.text', '6')
     cy.get(selectors.shoppingCartBadge).click()
     cy.get(selectors.cartItemName).should('have.length', 6)
@@ -74,19 +71,9 @@ describe('CT-006 - Adicionar produtos ao carrinho', () => {
 describe('CT-007 - Remover produtos do carrinho', () => {
   it('deve remover produtos do carrinho com sucesso', () => {
     login(standardUser, standardPassword)
-    cy.get(selectors.addToCartBackpackButton).click()
-    cy.get(selectors.addToCartBikeLightButton).click()
-    cy.get(selectors.addToCartFleeceJacketButton).click()
-    cy.get(selectors.addToCartTShirtButton).click()
-    cy.get(selectors.addToCartOnesieButton).click()
-    cy.get(selectors.addToCartAllTheThingsButton).click()
+    addAllProductsToCart()
     cy.get(selectors.shoppingCartBadge).click()
-    cy.get(selectors.removeFromCartBackpackButton).click()
-    cy.get(selectors.removeFromCartBikeLightButton).click()
-    cy.get(selectors.removeFromCartFleeceJacketButton).click()
-    cy.get(selectors.removeFromCartTShirtButton).click()
-    cy.get(selectors.removeFromCartOnesieButton).click()
-    cy.get(selectors.removeFromCartAllTheThingsButton).click()
+    removeAllProductsFromCart()
     cy.get(selectors.shoppingCartBadge).should('not.exist')
     cy.get(selectors.shoppingCartBadge).should('not.exist')
   })
