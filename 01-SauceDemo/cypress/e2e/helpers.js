@@ -73,3 +73,25 @@ export const removeAllProductsFromCart = () => {
     cy.get(selectors.removeFromCartOnesieButton).click()
     cy.get(selectors.removeFromCartAllTheThingsButton).click()
 }
+
+export const orderProductsByNameAZ = () => {
+      cy.get(selectors.sortContainerButton).select('az')
+    
+    cy.get(selectors.inventoryItemName).then(($items) => {
+      const names = [...$items].map((item) => item.innerText)
+      const sortedNames = [...names].sort()
+
+      expect(names).to.deep.equal(sortedNames)
+    })
+  }
+
+export const orderProductsByNameZA = () => {
+      cy.get(selectors.sortContainerButton).select('za')
+    
+    cy.get(selectors.inventoryItemName).then(($items) => {
+      const names = [...$items].map((item) => item.innerText)
+      const sortedNames = [...names].sort().reverse()
+
+      expect(names).to.deep.equal(sortedNames)
+    })
+  }

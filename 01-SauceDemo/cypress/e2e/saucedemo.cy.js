@@ -7,7 +7,9 @@ import {
   login,
   completeCheckout,
   addAllProductsToCart,
-  removeAllProductsFromCart
+  removeAllProductsFromCart,
+  orderProductsByNameAZ,
+  orderProductsByNameZA
 } from './helpers'
 
 describe('CT-001 - Login bem-sucedido', () => {
@@ -82,22 +84,7 @@ describe('CT-007 - Remover produtos do carrinho', () => {
 describe('CT-008 - Ordenar produtos de A-Z e Z-A', () => {
   it('deve ordenar os produtos de A-Z e Z-A com sucesso', () => {
     login(standardUser, standardPassword)
-    cy.get(selectors.sortContainerButton).select('az')
-    
-    cy.get(selectors.inventoryItemName).then(($items) => {
-      const names = [...$items].map((item) => item.innerText)
-      const sortedNames = [...names].sort()
-
-      expect(names).to.deep.equal(sortedNames)
-    })
-
-    cy.get(selectors.sortContainerButton).select('za')
-    
-    cy.get(selectors.inventoryItemName).then(($items) => {
-      const names = [...$items].map((item) => item.innerText)
-      const sortedNames = [...names].sort().reverse()
-
-      expect(names).to.deep.equal(sortedNames)
-    })
+    orderProductsByNameAZ()
+    orderProductsByNameZA()
   })
 })
