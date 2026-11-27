@@ -9,7 +9,9 @@ import {
   addAllProductsToCart,
   removeAllProductsFromCart,
   orderProductsByNameAZ,
-  orderProductsByNameZA
+  orderProductsByNameZA,
+  orderProductsByPriceLowToHigh,
+  orderProductsByPriceHighToLow
 } from './helpers'
 
 describe('CT-001 - Login bem-sucedido', () => {
@@ -86,5 +88,13 @@ describe('CT-008 - Ordenar produtos de A-Z e Z-A', () => {
     login(standardUser, standardPassword)
     orderProductsByNameAZ()
     orderProductsByNameZA()
+  })
+})
+
+describe('CT-009 - Ordenar produtos por preço (menor para maior e maior para menor)', () => {
+  it('deve ordenar os produtos por preço (menor para maior e maior para menor) com sucesso', () => {
+    login(standardUser, standardPassword)
+    orderProductsByPriceLowToHigh()
+    orderProductsByPriceHighToLow()
   })
 })
