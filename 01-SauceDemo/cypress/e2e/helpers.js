@@ -103,6 +103,7 @@ export const orderProductsByPriceLowToHigh = () => {
     cy.get(selectors.inventoryItemPrice).then(($prices) => {
       const prices = [...$prices].map((price) => parseFloat(price.innerText.replace('$', '')))
       const sortedPrices = [...prices].sort((a, b) => a - b)
+      
       cy.log(JSON.stringify(sortedPrices))
       expect(prices).to.deep.equal(sortedPrices)
     })
@@ -114,6 +115,7 @@ export const orderProductsByPriceHighToLow = () => {
     cy.get(selectors.inventoryItemPrice).then(($prices) => {
       const prices = [...$prices].map((price) => parseFloat(price.innerText.replace('$', '')))
       const sortedPrices = [...prices].sort((a, b) => b - a)
+      
       cy.log(JSON.stringify(sortedPrices))
       expect(prices).to.deep.equal(sortedPrices)
     })
