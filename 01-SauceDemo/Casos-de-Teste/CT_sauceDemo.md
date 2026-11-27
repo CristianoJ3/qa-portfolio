@@ -116,3 +116,19 @@
 ### Resultado esperado:
 - Todos os produtos devem ser exibidos em ordem alfabética crescente (A-Z);  
 - Todos os produtos devem ser exibidos em ordem alfabética decrescente (Z-A).
+
+## **CT-009** - Cenário: Ordenar produtos por preço (menor para maior e maior para menor).
+
+### Pré-Requisito:
+- O usuário deve estar autenticado no sistema.
+- Os seis produtos devem estar disponíveis na página de produtos.
+
+### Passos:
+1 - Na página de produtos, selecionar a opção de ordenação de menor para maior (Low to High);  
+2 - Verificar se os produtos estão organizados em ordem crescente de preço;  
+3 - Selecionar a opção de ordenação de maior para menor (High to Low);  
+4 - Verificar se os produtos estão organizados em ordem decrescente de preço.
+
+### Resultado esperado:
+- Todos os produtos devem ser exibidos em ordem crescente de preço (Low to High);  
+- Todos os produtos devem ser exibidos em ordem decrescente de preço (High to Low).
