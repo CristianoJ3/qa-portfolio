@@ -27,6 +27,7 @@ Os casos de teste estão documentados no arquivo CT_sauceDemo.md, presente em: .
 | CT-006 | Adicionar produtos ao carrinho |
 | CT-007 | Remover produtos do carrinho |
 | CT-008 | Ordenar produtos de A-Z e Z-A |
+| CT-009 | Ordenar produtos por preço (menor para maior e maior para menor) |
 
 ## Estrutura do projeto
 
