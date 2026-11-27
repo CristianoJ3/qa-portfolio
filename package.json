@@ -4,9 +4,9 @@
     "test:bugbank": "cypress run --spec \"02-BugBank/cypress/e2e/**/*.cy.js\" --reporter-options \"mochaFile=02-BugBank/results/bugBank-resultado-testes-[hash].xml,toConsole=true\""
   },
   "devDependencies": {
-    "cypress": "^16.2.0"
+    "cypress": "^16.4.0"
   },
   "allowScripts": {
-    "cypress@16.2.0": true
+    "cypress@16.4.0": true
   }
 }
