@@ -28,6 +28,7 @@ export const selectors = {
   removeFromCartAllTheThingsButton: '[data-test="remove-test.allthethings()-t-shirt-(red)"]',
   shoppingCartBadge: '[data-test="shopping-cart-badge"]',
   inventoryItemName: '.inventory_item_name',
+  inventoryItemPrice: '.inventory_item_price',
   checkoutButton: '[data-test="checkout"]',
   continueButton: '[data-test="continue"]',
   finishButton: '[data-test="finish"]',
@@ -75,7 +76,7 @@ export const removeAllProductsFromCart = () => {
 }
 
 export const orderProductsByNameAZ = () => {
-      cy.get(selectors.productSortSelector).select('az')
+    cy.get(selectors.productSortSelector).select('az')
     
     cy.get(selectors.inventoryItemName).then(($items) => {
       const names = [...$items].map((item) => item.innerText)
@@ -86,12 +87,34 @@ export const orderProductsByNameAZ = () => {
   }
 
 export const orderProductsByNameZA = () => {
-      cy.get(selectors.productSortSelector).select('za')
+    cy.get(selectors.productSortSelector).select('za')
     
     cy.get(selectors.inventoryItemName).then(($items) => {
       const names = [...$items].map((item) => item.innerText)
       const sortedNames = [...names].sort().reverse()
 
       expect(names).to.deep.equal(sortedNames)
+    })
+  }
+
+export const orderProductsByPriceLowToHigh = () => {
+    cy.get(selectors.productSortSelector).select('lohi')
+
+    cy.get(selectors.inventoryItemPrice).then(($prices) => {
+      const prices = [...$prices].map((price) => parseFloat(price.innerText.replace('$', '')))
+      const sortedPrices = [...prices].sort((a, b) => a - b)
+      cy.log(JSON.stringify(sortedPrices))
+      expect(prices).to.deep.equal(sortedPrices)
+    })
+}
+
+export const orderProductsByPriceHighToLow = () => {
+    cy.get(selectors.productSortSelector).select('hilo')
+
+    cy.get(selectors.inventoryItemPrice).then(($prices) => {
+      const prices = [...$prices].map((price) => parseFloat(price.innerText.replace('$', '')))
+      const sortedPrices = [...prices].sort((a, b) => b - a)
+      cy.log(JSON.stringify(sortedPrices))
+      expect(prices).to.deep.equal(sortedPrices)
     })
   }
